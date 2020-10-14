@@ -1,0 +1,16 @@
+<section class="stories-wrapper">
+  <div class="container">
+    <header>
+      <h2 class="header-text my-3 font-weight-bold">Latest stories</h2>
+    </header>
+    <p *ngIf="!news?.loaded">Loading...</p>
+    <article class="story-card p-4 story mb-3" *ngFor="let story of news.news | async; index as i" [routerLink]="['/stories', i]" [state]="story" @fadeHide>
+      <div class="title">
+        <p class="title-text mb-2">{{story?.title}}</p>
+      </div>
+      <div class="date">
+        <p class="date-text">{{story?.publication_date | date:'mediumDate'}}</p>
+      </div>
+    </article>
+  </div>
+</section>

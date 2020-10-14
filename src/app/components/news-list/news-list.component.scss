@@ -1,0 +1,22 @@
+@import "src/assets/variables";
+.stories-wrapper {
+  background-color: $bg-color;
+  .story {
+    cursor: pointer;
+    transition: 0.2s;
+    .date {
+      .date-text {
+        color: rgba(black, 0.6);
+      }
+    }
+    &:hover {
+      background-color: rgba(white, 0.4);
+      .title-text {
+        color: $main-color;
+      }
+    }
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+}
